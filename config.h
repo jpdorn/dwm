@@ -4,7 +4,7 @@
 
 /* appearance */
 static const unsigned int borderpx = 1; /* border pixel of windows */
-static const unsigned int snap = 32;    /* snap pixel */
+static const unsigned int snap = 2;     /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 0;            /* 0 means bottom bar */
 static const char *fonts[] = {"monospace:size=22"};
@@ -47,9 +47,9 @@ static const int lockfullscreen =
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"><>", NULL}, /* no layout function means floating behavior */
-    {"[]=", tile}, /* first entry is default */
-    {"[M]", monocle},
-    {"|||", tcl},
+                   //{"[]=", tile}, /* first entry is default */
+                   //{"[M]", monocle},
+                   //{"|||", tcl},
 };
 
 /* key definitions */
@@ -96,9 +96,9 @@ static const Key keys[] = {
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY | ShiftMask, XK_c, killclient, {0}},
     {MODKEY, XK_f, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
-    {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
+    //{MODKEY, XK_t, setlayout, {.v = &layouts[1]}},
+    //{MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
+    //{Modkeyle, XK_n, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},

@@ -210,7 +210,7 @@ static void killclient(const Arg *arg);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
-static void monocle(Monitor *m);
+// static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
@@ -237,7 +237,7 @@ static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
-static void tile(Monitor *m);
+// static void tile(Monitor *m);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglesticky(const Arg *arg);
@@ -1069,6 +1069,7 @@ void maprequest(XEvent *e) {
     manage(ev->window, &wa);
 }
 
+/*
 void monocle(Monitor *m) {
   unsigned int n = 0;
   Client *c;
@@ -1076,11 +1077,12 @@ void monocle(Monitor *m) {
   for (c = m->clients; c; c = c->next)
     if (ISVISIBLE(c))
       n++;
-  if (n > 0) /* override layout symbol */
-    snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
-  for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
-    resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
+  if (n > 0) // override layout symbol
+snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
+for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
+  resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
 }
+*/
 
 void motionnotify(XEvent *e) {
   static Monitor *mon = NULL;
@@ -1613,6 +1615,7 @@ void tag(const Arg *arg) {
   }
 }
 
+/*
 void tile(Monitor *m) {
   unsigned int i, n, h, mw, my, ty;
   Client *c;
@@ -1641,6 +1644,7 @@ void tile(Monitor *m) {
         ty += HEIGHT(c);
     }
 }
+*/
 
 void togglebar(const Arg *arg) {
   selmon->showbar = !selmon->showbar;
